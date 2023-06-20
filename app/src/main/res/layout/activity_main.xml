@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context="MainActivity">
 
     <Button
         android:id="@+id/capture_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Capture Image" />
+        android:text="Capture Image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 
     <Button
         android:id="@+id/ocr_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recognize Text" />
+        android:text="Perform OCR"
+        android:layout_below="@id/capture_button"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/read_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read Text" />
+        android:text="Read Text"
+        android:layout_below="@id/ocr_button"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
 
-    <ImageView
-        android:id="@+id/image_view"
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/read_button"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
-        android:contentDescription="Captured Image" />
+        android:scaleType="fitCenter"/>
 
-</LinearLayout>
+</RelativeLayout>
+
