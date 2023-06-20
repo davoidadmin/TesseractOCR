@@ -1,3 +1,4 @@
+package com.example.tesseract_ocr;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
